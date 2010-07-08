@@ -1,3 +1,5 @@
-pkg/**/*
+pkg
 *~
 *.swp
+test/debug.log
+test/has_many_booleans_plugin.sqlite3
