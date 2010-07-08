@@ -1,0 +1,710 @@
+# Logfile created on 2010-07-06 12:07:19 +0200 by logger.rb/20321
+  [4;36;1mSQL (1.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (161.0ms)[0m   [0;1mCREATE TABLE "appends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (88.0ms)[0m   [0;1mCREATE TABLE "append_nils" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (102.2ms)[0m   [0;1mCREATE TABLE "defaults" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (87.0ms)[0m   [0;1mCREATE TABLE "many_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (82.4ms)[0m   [0;1mCREATE TABLE "no_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (113.9ms)[0m   [0;1mCREATE TABLE "hmbs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (97.1ms)[0m   [0;1mCREATE TABLE "suffix_nones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (82.2ms)[0m   [0;1mCREATE TABLE "suffix_question_onlies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (107.2ms)[0m   [0;1mCREATE TABLE "suffix_equal_onlies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (1.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (68.2ms)[0m   [0;1mCREATE TABLE "suffix_exclamation_onlies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (1.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (72.2ms)[0m   [0;1mCREATE TABLE "selves" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (2.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (117.1ms)[0m   [0;1mCREATE TABLE "self_append_nils" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (1.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (92.7ms)[0m   [0;1mCREATE TABLE "self_names" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (100.4ms)[0m   [0;1mCREATE TABLE "ar_callbacks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (2.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (79.8ms)[0m   [0;1mCREATE TABLE "lazy_falses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (2.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (131.1ms)[0m   [0;1mCREATE TABLE "booleans_as_hashes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (87.4ms)[0m   [0;1mCREATE TABLE "single_hashes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (97.6ms)[0m   [0;1mCREATE TABLE "validate_tests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (126.3ms)[0m   [0;1mCREATE TABLE "false_values" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (90.1ms)[0m   [0;1mCREATE TABLE "scopes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (83.8ms)[0m   [0;1mCREATE TABLE "fields" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "bools" integer) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (83.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (125.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (88.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Create (2.2ms)[0m   [0mINSERT INTO "ar_callbacks" ("name", "booleans") VALUES('matz', 0)[0m
+  [4;36;1mHasManyBooleansTest::AppendNil Create (2.2ms)[0m   [0;1mINSERT INTO "append_nils" ("name", "booleans") VALUES('Yukihiro', 0)[0m
+  [4;35;1mHasManyBooleansTest::AppendNil Load (1.3ms)[0m   [0mSELECT * FROM "append_nils" ORDER BY append_nils.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Default Create (2.2ms)[0m   [0;1mINSERT INTO "defaults" ("name", "booleans") VALUES(NULL, 4)[0m
+  [4;35;1mHasManyBooleansTest::Default Load (1.6ms)[0m   [0mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Default Update (2.9ms)[0m   [0;1mUPDATE "defaults" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Default Load (1.2ms)[0m   [0mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Default Update (3.1ms)[0m   [0;1mUPDATE "defaults" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Default Load (1.1ms)[0m   [0mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Default Update (3.2ms)[0m   [0;1mUPDATE "defaults" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Default Load (1.1ms)[0m   [0mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ManyOption Create (3.5ms)[0m   [0;1mINSERT INTO "many_options" ("name", "booleans") VALUES(NULL, 4)[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Load (1.1ms)[0m   [0mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ManyOption Update (1.5ms)[0m   [0;1mUPDATE "many_options" SET "booleans" = 20 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Load (1.2ms)[0m   [0mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ManyOption Load (1.0ms)[0m   [0;1mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Update (1.7ms)[0m   [0mUPDATE "many_options" SET "booleans" = 52 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::ManyOption Load (1.6ms)[0m   [0;1mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::NoOption Create (2.2ms)[0m   [0mINSERT INTO "no_options" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::NoOption Load (1.3ms)[0m   [0;1mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::NoOption Update (2.9ms)[0m   [0mUPDATE "no_options" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::NoOption Load (1.2ms)[0m   [0;1mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::NoOption Load (1.0ms)[0m   [0mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::NoOption Update (1.6ms)[0m   [0;1mUPDATE "no_options" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::NoOption Load (1.1ms)[0m   [0mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::BooleansAsHash Create (2.2ms)[0m   [0;1mINSERT INTO "booleans_as_hashes" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Load (1.1ms)[0m   [0mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::BooleansAsHash Update (2.9ms)[0m   [0;1mUPDATE "booleans_as_hashes" SET "booleans" = 8388608 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Load (1.6ms)[0m   [0mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::BooleansAsHash Load (0.9ms)[0m   [0;1mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Update (1.7ms)[0m   [0mUPDATE "booleans_as_hashes" SET "booleans" = 8388672 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::BooleansAsHash Load (1.4ms)[0m   [0;1mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Hmb Create (2.2ms)[0m   [0mINSERT INTO "hmbs" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::Hmb Load (1.4ms)[0m   [0;1mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Hmb Update (3.0ms)[0m   [0mUPDATE "hmbs" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Hmb Load (1.2ms)[0m   [0;1mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Hmb Load (1.1ms)[0m   [0mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Hmb Update (1.5ms)[0m   [0;1mUPDATE "hmbs" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Hmb Load (1.3ms)[0m   [0mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Append Create (4.2ms)[0m   [0;1mINSERT INTO "appends" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::Append Load (1.3ms)[0m   [0mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Append Update (1.5ms)[0m   [0;1mUPDATE "appends" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Append Load (1.2ms)[0m   [0mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Append Load (0.9ms)[0m   [0;1mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Append Update (2.5ms)[0m   [0mUPDATE "appends" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Append Load (1.1ms)[0m   [0;1mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Field Create (3.6ms)[0m   [0mINSERT INTO "fields" ("name", "bools") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::Field Load (1.3ms)[0m   [0;1mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Field Update (2.9ms)[0m   [0mUPDATE "fields" SET "bools" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Field Load (1.2ms)[0m   [0;1mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Field Load (1.0ms)[0m   [0mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Field Update (2.9ms)[0m   [0;1mUPDATE "fields" SET "bools" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Field Load (1.2ms)[0m   [0mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::SuffixEqualOnly Create (2.2ms)[0m   [0;1mINSERT INTO "suffix_equal_onlies" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Load (1.1ms)[0m   [0mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::SuffixEqualOnly Update (1.6ms)[0m   [0;1mUPDATE "suffix_equal_onlies" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Load (1.1ms)[0m   [0mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::SuffixEqualOnly Load (0.9ms)[0m   [0;1mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Update (2.9ms)[0m   [0mUPDATE "suffix_equal_onlies" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::SuffixEqualOnly Load (1.3ms)[0m   [0;1mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Self Create (4.0ms)[0m   [0mINSERT INTO "selves" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::Self Load (1.3ms)[0m   [0;1mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Self Update (1.5ms)[0m   [0mUPDATE "selves" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Self Load (1.1ms)[0m   [0;1mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Self Load (0.5ms)[0m   [0mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Self Update (1.6ms)[0m   [0;1mUPDATE "selves" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Self Load (1.1ms)[0m   [0mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::SelfName Create (2.2ms)[0m   [0;1mINSERT INTO "self_names" ("name", "booleans") VALUES(NULL, 1)[0m
+  [4;35;1mHasManyBooleansTest::SelfName Load (1.1ms)[0m   [0mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::SelfName Update (2.9ms)[0m   [0;1mUPDATE "self_names" SET "booleans" = 3 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::SelfName Load (1.2ms)[0m   [0mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::SelfName Load (0.9ms)[0m   [0;1mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SelfName Update (2.8ms)[0m   [0mUPDATE "self_names" SET "booleans" = 7 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::SelfName Load (1.1ms)[0m   [0;1mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Create (2.3ms)[0m   [0mINSERT INTO "ar_callbacks" ("name", "booleans") VALUES('matz', 0)[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Load (1.1ms)[0m   [0;1mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Update (2.9ms)[0m   [0mUPDATE "ar_callbacks" SET "booleans" = 2 WHERE "id" = 2[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Load (1.1ms)[0m   [0;1mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Load (0.6ms)[0m   [0mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Update (1.8ms)[0m   [0;1mUPDATE "ar_callbacks" SET "booleans" = 6 WHERE "id" = 2[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Load (1.1ms)[0m   [0mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::LazyFalse Create (4.2ms)[0m   [0;1mINSERT INTO "lazy_falses" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Load (1.2ms)[0m   [0mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::LazyFalse Update (3.1ms)[0m   [0;1mUPDATE "lazy_falses" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Load (1.1ms)[0m   [0mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::LazyFalse Load (1.0ms)[0m   [0;1mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Update (3.8ms)[0m   [0mUPDATE "lazy_falses" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::LazyFalse Load (1.4ms)[0m   [0;1mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::FalseValue Create (2.2ms)[0m   [0mINSERT INTO "false_values" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Load (1.2ms)[0m   [0;1mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::FalseValue Update (3.2ms)[0m   [0mUPDATE "false_values" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Load (1.2ms)[0m   [0;1mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::FalseValue Load (1.0ms)[0m   [0mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Update (1.7ms)[0m   [0;1mUPDATE "false_values" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::FalseValue Load (1.2ms)[0m   [0mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Scope Create (2.4ms)[0m   [0;1mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::Scope Create (4.2ms)[0m   [0mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 5)[0m
+  [4;36;1mHasManyBooleansTest::Scope Create (4.1ms)[0m   [0;1mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 1)[0m
+  [4;35;1mHasManyBooleansTest::Scope Create (4.2ms)[0m   [0mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 4)[0m
+  [4;36;1mHasManyBooleansTest::Scope Create (2.3ms)[0m   [0;1mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 2)[0m
+  [4;35;1mHasManyBooleansTest::Scope Load (1.3ms)[0m   [0mSELECT * FROM "scopes" WHERE ("scopes"."id" = 5) [0m
+  [4;36;1mHasManyBooleansTest::Scope Load (0.6ms)[0m   [0;1mSELECT * FROM "scopes" WHERE (booleans & 2) [0m
+  [4;35;1mHasManyBooleansTest::Scope Load (0.9ms)[0m   [0mSELECT * FROM "scopes" WHERE ("scopes"."id" IN (1,4,5)) [0m
+  [4;36;1mHasManyBooleansTest::Scope Load (0.8ms)[0m   [0;1mSELECT * FROM "scopes" WHERE (booleans & 1 < 1) [0m
+  [4;35;1mHasManyBooleansTest::Scope Load (0.8ms)[0m   [0mSELECT * FROM "scopes" WHERE ("scopes"."id" IN (2,4,5)) [0m
+  [4;36;1mHasManyBooleansTest::Scope Load (0.8ms)[0m   [0;1mSELECT * FROM "scopes" WHERE (booleans & 2 or booleans & 4) [0m
+  [4;35;1mHasManyBooleansTest::Scope Load (0.4ms)[0m   [0mSELECT * FROM "scopes" WHERE ((booleans & 4) AND (booleans & 2)) [0m
+  [4;36;1mHasManyBooleansTest::ValidateTest Create (2.1ms)[0m   [0;1mINSERT INTO "validate_tests" ("name", "booleans") VALUES(NULL, 2)[0m
+  [4;35;1mHasManyBooleansTest::ValidateTest Create (4.4ms)[0m   [0mINSERT INTO "validate_tests" ("name", "booleans") VALUES(NULL, 2)[0m
+  [4;36;1mSQL (19.7ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (7.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (127.6ms)[0m   [0;1mDROP TABLE "appends"[0m
+  [4;35;1mSQL (100.1ms)[0m   [0mCREATE TABLE "appends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (90.0ms)[0m   [0mDROP TABLE "append_nils"[0m
+  [4;36;1mSQL (90.9ms)[0m   [0;1mCREATE TABLE "append_nils" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (88.0ms)[0m   [0;1mDROP TABLE "defaults"[0m
+  [4;35;1mSQL (90.8ms)[0m   [0mCREATE TABLE "defaults" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (88.4ms)[0m   [0mDROP TABLE "many_options"[0m
+  [4;36;1mSQL (91.2ms)[0m   [0;1mCREATE TABLE "many_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (100.2ms)[0m   [0;1mDROP TABLE "no_options"[0m
+  [4;35;1mSQL (106.8ms)[0m   [0mCREATE TABLE "no_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (91.7ms)[0m   [0mDROP TABLE "hmbs"[0m
+  [4;36;1mSQL (87.0ms)[0m   [0;1mCREATE TABLE "hmbs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (93.1ms)[0m   [0;1mDROP TABLE "suffix_nones"[0m
+  [4;35;1mSQL (95.6ms)[0m   [0mCREATE TABLE "suffix_nones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (91.1ms)[0m   [0mDROP TABLE "suffix_question_onlies"[0m
+  [4;36;1mSQL (98.6ms)[0m   [0;1mCREATE TABLE "suffix_question_onlies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (102.1ms)[0m   [0;1mDROP TABLE "suffix_equal_onlies"[0m
+  [4;35;1mSQL (98.3ms)[0m   [0mCREATE TABLE "suffix_equal_onlies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (92.6ms)[0m   [0mDROP TABLE "suffix_exclamation_onlies"[0m
+  [4;36;1mSQL (98.5ms)[0m   [0;1mCREATE TABLE "suffix_exclamation_onlies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (171.0ms)[0m   [0;1mDROP TABLE "selves"[0m
+  [4;35;1mSQL (94.8ms)[0m   [0mCREATE TABLE "selves" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (105.3ms)[0m   [0mDROP TABLE "self_append_nils"[0m
+  [4;36;1mSQL (95.3ms)[0m   [0;1mCREATE TABLE "self_append_nils" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (106.9ms)[0m   [0;1mDROP TABLE "self_names"[0m
+  [4;35;1mSQL (99.1ms)[0m   [0mCREATE TABLE "self_names" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (89.6ms)[0m   [0mDROP TABLE "ar_callbacks"[0m
+  [4;36;1mSQL (95.8ms)[0m   [0;1mCREATE TABLE "ar_callbacks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (95.9ms)[0m   [0;1mDROP TABLE "lazy_falses"[0m
+  [4;35;1mSQL (99.3ms)[0m   [0mCREATE TABLE "lazy_falses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (89.1ms)[0m   [0mDROP TABLE "booleans_as_hashes"[0m
+  [4;36;1mSQL (95.7ms)[0m   [0;1mCREATE TABLE "booleans_as_hashes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (97.1ms)[0m   [0;1mDROP TABLE "single_hashes"[0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE TABLE "single_hashes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (93.7ms)[0m   [0mDROP TABLE "validate_tests"[0m
+  [4;36;1mSQL (100.1ms)[0m   [0;1mCREATE TABLE "validate_tests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (91.4ms)[0m   [0;1mDROP TABLE "false_values"[0m
+  [4;35;1mSQL (99.2ms)[0m   [0mCREATE TABLE "false_values" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (90.7ms)[0m   [0mDROP TABLE "scopes"[0m
+  [4;36;1mSQL (99.6ms)[0m   [0;1mCREATE TABLE "scopes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (102.6ms)[0m   [0;1mDROP TABLE "fields"[0m
+  [4;35;1mSQL (99.9ms)[0m   [0mCREATE TABLE "fields" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "bools" integer) [0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Create (2.3ms)[0m   [0;1mINSERT INTO "ar_callbacks" ("name", "booleans") VALUES('matz', 0)[0m
+  [4;35;1mHasManyBooleansTest::AppendNil Create (2.6ms)[0m   [0mINSERT INTO "append_nils" ("name", "booleans") VALUES('Yukihiro', 0)[0m
+  [4;36;1mHasManyBooleansTest::AppendNil Load (1.2ms)[0m   [0;1mSELECT * FROM "append_nils" ORDER BY append_nils.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Default Create (2.1ms)[0m   [0mINSERT INTO "defaults" ("name", "booleans") VALUES(NULL, 4)[0m
+  [4;36;1mHasManyBooleansTest::Default Load (1.2ms)[0m   [0;1mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Default Update (1.7ms)[0m   [0mUPDATE "defaults" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Default Load (1.2ms)[0m   [0;1mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Default Update (3.2ms)[0m   [0mUPDATE "defaults" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Default Load (1.5ms)[0m   [0;1mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Default Update (2.8ms)[0m   [0mUPDATE "defaults" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Default Load (1.9ms)[0m   [0;1mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Create (4.9ms)[0m   [0mINSERT INTO "many_options" ("name", "booleans") VALUES(NULL, 4)[0m
+  [4;36;1mHasManyBooleansTest::ManyOption Load (1.2ms)[0m   [0;1mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Update (1.6ms)[0m   [0mUPDATE "many_options" SET "booleans" = 20 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::ManyOption Load (1.1ms)[0m   [0;1mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Load (0.5ms)[0m   [0mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ManyOption Update (2.0ms)[0m   [0;1mUPDATE "many_options" SET "booleans" = 52 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Load (1.9ms)[0m   [0mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::NoOption Create (3.4ms)[0m   [0;1mINSERT INTO "no_options" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::NoOption Load (1.8ms)[0m   [0mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::NoOption Update (2.9ms)[0m   [0;1mUPDATE "no_options" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::NoOption Load (1.2ms)[0m   [0mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::NoOption Load (1.0ms)[0m   [0;1mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::NoOption Update (3.1ms)[0m   [0mUPDATE "no_options" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::NoOption Load (1.6ms)[0m   [0;1mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Create (4.6ms)[0m   [0mINSERT INTO "booleans_as_hashes" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::BooleansAsHash Load (1.9ms)[0m   [0;1mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Update (3.2ms)[0m   [0mUPDATE "booleans_as_hashes" SET "booleans" = 8388608 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::BooleansAsHash Load (1.3ms)[0m   [0;1mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Load (1.0ms)[0m   [0mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::BooleansAsHash Update (1.7ms)[0m   [0;1mUPDATE "booleans_as_hashes" SET "booleans" = 8388672 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Load (1.1ms)[0m   [0mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Hmb Create (2.8ms)[0m   [0;1mINSERT INTO "hmbs" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::Hmb Load (1.1ms)[0m   [0mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Hmb Update (3.0ms)[0m   [0;1mUPDATE "hmbs" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Hmb Load (1.2ms)[0m   [0mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Hmb Load (0.8ms)[0m   [0;1mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Hmb Update (1.6ms)[0m   [0mUPDATE "hmbs" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Hmb Load (1.2ms)[0m   [0;1mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Append Create (5.6ms)[0m   [0mINSERT INTO "appends" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::Append Load (1.9ms)[0m   [0;1mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Append Update (3.1ms)[0m   [0mUPDATE "appends" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Append Load (1.2ms)[0m   [0;1mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Append Load (0.5ms)[0m   [0mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Append Update (1.5ms)[0m   [0;1mUPDATE "appends" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Append Load (1.1ms)[0m   [0mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Field Create (3.8ms)[0m   [0;1mINSERT INTO "fields" ("name", "bools") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::Field Load (1.2ms)[0m   [0mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Field Update (3.1ms)[0m   [0;1mUPDATE "fields" SET "bools" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Field Load (1.4ms)[0m   [0mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Field Load (0.9ms)[0m   [0;1mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Field Update (1.9ms)[0m   [0mUPDATE "fields" SET "bools" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Field Load (1.1ms)[0m   [0;1mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Create (4.4ms)[0m   [0mINSERT INTO "suffix_equal_onlies" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::SuffixEqualOnly Load (1.2ms)[0m   [0;1mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Update (3.0ms)[0m   [0mUPDATE "suffix_equal_onlies" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::SuffixEqualOnly Load (1.3ms)[0m   [0;1mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Load (1.1ms)[0m   [0mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::SuffixEqualOnly Update (2.0ms)[0m   [0;1mUPDATE "suffix_equal_onlies" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Load (1.4ms)[0m   [0mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Self Create (4.9ms)[0m   [0;1mINSERT INTO "selves" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::Self Load (1.3ms)[0m   [0mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Self Update (3.0ms)[0m   [0;1mUPDATE "selves" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Self Load (1.2ms)[0m   [0mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Self Load (1.0ms)[0m   [0;1mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Self Update (1.6ms)[0m   [0mUPDATE "selves" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Self Load (1.9ms)[0m   [0;1mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SelfName Create (2.2ms)[0m   [0mINSERT INTO "self_names" ("name", "booleans") VALUES(NULL, 1)[0m
+  [4;36;1mHasManyBooleansTest::SelfName Load (1.3ms)[0m   [0;1mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SelfName Update (1.7ms)[0m   [0mUPDATE "self_names" SET "booleans" = 3 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::SelfName Load (1.1ms)[0m   [0;1mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SelfName Load (0.6ms)[0m   [0mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::SelfName Update (1.6ms)[0m   [0;1mUPDATE "self_names" SET "booleans" = 7 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::SelfName Load (1.1ms)[0m   [0mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Create (2.7ms)[0m   [0;1mINSERT INTO "ar_callbacks" ("name", "booleans") VALUES('matz', 0)[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Load (1.1ms)[0m   [0mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Update (2.9ms)[0m   [0;1mUPDATE "ar_callbacks" SET "booleans" = 2 WHERE "id" = 2[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Load (1.2ms)[0m   [0mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Load (0.9ms)[0m   [0;1mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Update (2.5ms)[0m   [0mUPDATE "ar_callbacks" SET "booleans" = 6 WHERE "id" = 2[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Load (1.1ms)[0m   [0;1mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Create (5.4ms)[0m   [0mINSERT INTO "lazy_falses" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::LazyFalse Load (2.0ms)[0m   [0;1mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Update (2.8ms)[0m   [0mUPDATE "lazy_falses" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::LazyFalse Load (1.1ms)[0m   [0;1mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Load (1.0ms)[0m   [0mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::LazyFalse Update (1.5ms)[0m   [0;1mUPDATE "lazy_falses" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Load (1.2ms)[0m   [0mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Create (2.2ms)[0m   [0;1mINSERT INTO "false_values" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::FalseValue Load (1.6ms)[0m   [0mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Update (1.6ms)[0m   [0;1mUPDATE "false_values" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::FalseValue Load (1.3ms)[0m   [0mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Load (0.6ms)[0m   [0;1mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::FalseValue Update (1.5ms)[0m   [0mUPDATE "false_values" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Load (1.2ms)[0m   [0;1mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Scope Create (2.2ms)[0m   [0mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::Scope Create (2.1ms)[0m   [0;1mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 5)[0m
+  [4;35;1mHasManyBooleansTest::Scope Create (4.7ms)[0m   [0mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 1)[0m
+  [4;36;1mHasManyBooleansTest::Scope Create (3.9ms)[0m   [0;1mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 4)[0m
+  [4;35;1mHasManyBooleansTest::Scope Create (4.3ms)[0m   [0mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 2)[0m
+  [4;36;1mHasManyBooleansTest::Scope Load (1.2ms)[0m   [0;1mSELECT * FROM "scopes" WHERE ("scopes"."id" = 5) [0m
+  [4;35;1mHasManyBooleansTest::Scope Load (1.0ms)[0m   [0mSELECT * FROM "scopes" WHERE (booleans & 2) [0m
+  [4;36;1mHasManyBooleansTest::Scope Load (1.4ms)[0m   [0;1mSELECT * FROM "scopes" WHERE ("scopes"."id" IN (1,4,5)) [0m
+  [4;35;1mHasManyBooleansTest::Scope Load (0.8ms)[0m   [0mSELECT * FROM "scopes" WHERE (booleans & 1 < 1) [0m
+  [4;36;1mHasManyBooleansTest::Scope Load (1.2ms)[0m   [0;1mSELECT * FROM "scopes" WHERE ("scopes"."id" IN (2,4,5)) [0m
+  [4;35;1mHasManyBooleansTest::Scope Load (0.8ms)[0m   [0mSELECT * FROM "scopes" WHERE (booleans & 2 or booleans & 4) [0m
+  [4;36;1mHasManyBooleansTest::Scope Load (0.6ms)[0m   [0;1mSELECT * FROM "scopes" WHERE ((booleans & 4) AND (booleans & 2)) [0m
+  [4;35;1mHasManyBooleansTest::ValidateTest Create (4.2ms)[0m   [0mINSERT INTO "validate_tests" ("name", "booleans") VALUES(NULL, 2)[0m
+  [4;36;1mHasManyBooleansTest::ValidateTest Create (2.2ms)[0m   [0;1mINSERT INTO "validate_tests" ("name", "booleans") VALUES(NULL, 2)[0m
+  [4;36;1mSQL (19.6ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (7.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (105.8ms)[0m   [0;1mDROP TABLE "appends"[0m
+  [4;35;1mSQL (113.0ms)[0m   [0mCREATE TABLE "appends" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (99.1ms)[0m   [0mDROP TABLE "append_nils"[0m
+  [4;36;1mSQL (102.3ms)[0m   [0;1mCREATE TABLE "append_nils" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (89.1ms)[0m   [0;1mDROP TABLE "defaults"[0m
+  [4;35;1mSQL (99.1ms)[0m   [0mCREATE TABLE "defaults" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (100.6ms)[0m   [0mDROP TABLE "many_options"[0m
+  [4;36;1mSQL (105.7ms)[0m   [0;1mCREATE TABLE "many_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (94.6ms)[0m   [0;1mDROP TABLE "no_options"[0m
+  [4;35;1mSQL (102.2ms)[0m   [0mCREATE TABLE "no_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (99.3ms)[0m   [0mDROP TABLE "hmbs"[0m
+  [4;36;1mSQL (102.3ms)[0m   [0;1mCREATE TABLE "hmbs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (2.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (89.1ms)[0m   [0;1mDROP TABLE "suffix_nones"[0m
+  [4;35;1mSQL (91.3ms)[0m   [0mCREATE TABLE "suffix_nones" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (4.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (88.2ms)[0m   [0mDROP TABLE "suffix_question_onlies"[0m
+  [4;36;1mSQL (106.3ms)[0m   [0;1mCREATE TABLE "suffix_question_onlies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (103.5ms)[0m   [0;1mDROP TABLE "suffix_equal_onlies"[0m
+  [4;35;1mSQL (98.3ms)[0m   [0mCREATE TABLE "suffix_equal_onlies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (105.9ms)[0m   [0mDROP TABLE "suffix_exclamation_onlies"[0m
+  [4;36;1mSQL (99.6ms)[0m   [0;1mCREATE TABLE "suffix_exclamation_onlies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (102.8ms)[0m   [0;1mDROP TABLE "selves"[0m
+  [4;35;1mSQL (94.9ms)[0m   [0mCREATE TABLE "selves" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (4.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (95.9ms)[0m   [0mDROP TABLE "self_append_nils"[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mCREATE TABLE "self_append_nils" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (102.2ms)[0m   [0;1mDROP TABLE "self_names"[0m
+  [4;35;1mSQL (94.3ms)[0m   [0mCREATE TABLE "self_names" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (106.6ms)[0m   [0mDROP TABLE "ar_callbacks"[0m
+  [4;36;1mSQL (110.0ms)[0m   [0;1mCREATE TABLE "ar_callbacks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (113.8ms)[0m   [0;1mDROP TABLE "lazy_falses"[0m
+  [4;35;1mSQL (109.1ms)[0m   [0mCREATE TABLE "lazy_falses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (98.9ms)[0m   [0mDROP TABLE "booleans_as_hashes"[0m
+  [4;36;1mSQL (104.9ms)[0m   [0;1mCREATE TABLE "booleans_as_hashes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (102.9ms)[0m   [0;1mDROP TABLE "single_hashes"[0m
+  [4;35;1mSQL (98.5ms)[0m   [0mCREATE TABLE "single_hashes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (4.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (103.5ms)[0m   [0mDROP TABLE "validate_tests"[0m
+  [4;36;1mSQL (99.1ms)[0m   [0;1mCREATE TABLE "validate_tests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (4.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (101.5ms)[0m   [0;1mDROP TABLE "false_values"[0m
+  [4;35;1mSQL (98.7ms)[0m   [0mCREATE TABLE "false_values" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (124.9ms)[0m   [0mDROP TABLE "scopes"[0m
+  [4;36;1mSQL (111.4ms)[0m   [0;1mCREATE TABLE "scopes" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "booleans" integer) [0m
+  [4;35;1mSQL (3.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (102.2ms)[0m   [0;1mDROP TABLE "fields"[0m
+  [4;35;1mSQL (110.4ms)[0m   [0mCREATE TABLE "fields" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "bools" integer) [0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Create (18.5ms)[0m   [0;1mINSERT INTO "ar_callbacks" ("name", "booleans") VALUES('matz', 0)[0m
+  [4;35;1mHasManyBooleansTest::AppendNil Create (2.2ms)[0m   [0mINSERT INTO "append_nils" ("name", "booleans") VALUES('Yukihiro', 0)[0m
+  [4;36;1mHasManyBooleansTest::AppendNil Load (1.4ms)[0m   [0;1mSELECT * FROM "append_nils" ORDER BY append_nils.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Default Create (2.1ms)[0m   [0mINSERT INTO "defaults" ("name", "booleans") VALUES(NULL, 4)[0m
+  [4;36;1mHasManyBooleansTest::Default Load (1.4ms)[0m   [0;1mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Default Update (2.9ms)[0m   [0mUPDATE "defaults" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Default Load (1.1ms)[0m   [0;1mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Default Update (2.8ms)[0m   [0mUPDATE "defaults" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Default Load (1.2ms)[0m   [0;1mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Default Update (1.6ms)[0m   [0mUPDATE "defaults" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Default Load (1.3ms)[0m   [0;1mSELECT * FROM "defaults" ORDER BY defaults.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Create (4.4ms)[0m   [0mINSERT INTO "many_options" ("name", "booleans") VALUES(NULL, 4)[0m
+  [4;36;1mHasManyBooleansTest::ManyOption Load (1.3ms)[0m   [0;1mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Update (4.3ms)[0m   [0mUPDATE "many_options" SET "booleans" = 20 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::ManyOption Load (0.7ms)[0m   [0;1mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Load (0.6ms)[0m   [0mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ManyOption Update (1.5ms)[0m   [0;1mUPDATE "many_options" SET "booleans" = 52 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::ManyOption Load (1.2ms)[0m   [0mSELECT * FROM "many_options" ORDER BY many_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::NoOption Create (2.3ms)[0m   [0;1mINSERT INTO "no_options" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::NoOption Load (1.1ms)[0m   [0mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::NoOption Update (3.0ms)[0m   [0;1mUPDATE "no_options" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::NoOption Load (1.2ms)[0m   [0mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::NoOption Load (1.1ms)[0m   [0;1mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::NoOption Update (1.7ms)[0m   [0mUPDATE "no_options" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::NoOption Load (1.2ms)[0m   [0;1mSELECT * FROM "no_options" ORDER BY no_options.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Create (2.4ms)[0m   [0mINSERT INTO "booleans_as_hashes" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::BooleansAsHash Load (1.1ms)[0m   [0;1mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Update (1.6ms)[0m   [0mUPDATE "booleans_as_hashes" SET "booleans" = 8388608 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::BooleansAsHash Load (1.1ms)[0m   [0;1mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Load (1.0ms)[0m   [0mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::BooleansAsHash Update (2.8ms)[0m   [0;1mUPDATE "booleans_as_hashes" SET "booleans" = 8388672 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::BooleansAsHash Load (1.3ms)[0m   [0mSELECT * FROM "booleans_as_hashes" ORDER BY booleans_as_hashes.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Hmb Create (4.9ms)[0m   [0;1mINSERT INTO "hmbs" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::Hmb Load (1.4ms)[0m   [0mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Hmb Update (1.6ms)[0m   [0;1mUPDATE "hmbs" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Hmb Load (1.4ms)[0m   [0mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Hmb Load (1.1ms)[0m   [0;1mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Hmb Update (1.6ms)[0m   [0mUPDATE "hmbs" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Hmb Load (1.1ms)[0m   [0;1mSELECT * FROM "hmbs" ORDER BY hmbs.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Append Create (2.3ms)[0m   [0mINSERT INTO "appends" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::Append Load (1.3ms)[0m   [0;1mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Append Update (3.2ms)[0m   [0mUPDATE "appends" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Append Load (1.3ms)[0m   [0;1mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Append Load (0.5ms)[0m   [0mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Append Update (2.1ms)[0m   [0;1mUPDATE "appends" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Append Load (1.1ms)[0m   [0mSELECT * FROM "appends" ORDER BY appends.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Field Create (2.1ms)[0m   [0;1mINSERT INTO "fields" ("name", "bools") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::Field Load (1.6ms)[0m   [0mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Field Update (3.0ms)[0m   [0;1mUPDATE "fields" SET "bools" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Field Load (1.2ms)[0m   [0mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Field Load (1.1ms)[0m   [0;1mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Field Update (1.5ms)[0m   [0mUPDATE "fields" SET "bools" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Field Load (0.7ms)[0m   [0;1mSELECT * FROM "fields" ORDER BY fields.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Create (4.1ms)[0m   [0mINSERT INTO "suffix_equal_onlies" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::SuffixEqualOnly Load (1.1ms)[0m   [0;1mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Update (3.1ms)[0m   [0mUPDATE "suffix_equal_onlies" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::SuffixEqualOnly Load (1.1ms)[0m   [0;1mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Load (1.0ms)[0m   [0mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::SuffixEqualOnly Update (1.6ms)[0m   [0;1mUPDATE "suffix_equal_onlies" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::SuffixEqualOnly Load (1.3ms)[0m   [0mSELECT * FROM "suffix_equal_onlies" ORDER BY suffix_equal_onlies.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Self Create (6.3ms)[0m   [0;1mINSERT INTO "selves" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::Self Load (1.1ms)[0m   [0mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Self Update (2.9ms)[0m   [0;1mUPDATE "selves" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::Self Load (1.2ms)[0m   [0mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::Self Load (1.2ms)[0m   [0;1mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Self Update (1.5ms)[0m   [0mUPDATE "selves" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::Self Load (1.3ms)[0m   [0;1mSELECT * FROM "selves" ORDER BY selves.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SelfName Create (2.5ms)[0m   [0mINSERT INTO "self_names" ("name", "booleans") VALUES(NULL, 1)[0m
+  [4;36;1mHasManyBooleansTest::SelfName Load (1.2ms)[0m   [0;1mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SelfName Update (1.6ms)[0m   [0mUPDATE "self_names" SET "booleans" = 3 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::SelfName Load (1.3ms)[0m   [0;1mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::SelfName Load (0.9ms)[0m   [0mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::SelfName Update (1.6ms)[0m   [0;1mUPDATE "self_names" SET "booleans" = 7 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::SelfName Load (1.1ms)[0m   [0mSELECT * FROM "self_names" ORDER BY self_names.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Create (4.0ms)[0m   [0;1mINSERT INTO "ar_callbacks" ("name", "booleans") VALUES('matz', 0)[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Load (1.2ms)[0m   [0mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Update (4.4ms)[0m   [0;1mUPDATE "ar_callbacks" SET "booleans" = 2 WHERE "id" = 2[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Load (2.1ms)[0m   [0mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Load (0.9ms)[0m   [0;1mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::ArCallback Update (1.6ms)[0m   [0mUPDATE "ar_callbacks" SET "booleans" = 6 WHERE "id" = 2[0m
+  [4;36;1mHasManyBooleansTest::ArCallback Load (1.1ms)[0m   [0;1mSELECT * FROM "ar_callbacks" ORDER BY ar_callbacks.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Create (2.2ms)[0m   [0mINSERT INTO "lazy_falses" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::LazyFalse Load (1.1ms)[0m   [0;1mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Update (2.9ms)[0m   [0mUPDATE "lazy_falses" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::LazyFalse Load (1.6ms)[0m   [0;1mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Load (0.5ms)[0m   [0mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::LazyFalse Update (1.6ms)[0m   [0;1mUPDATE "lazy_falses" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::LazyFalse Load (1.7ms)[0m   [0mSELECT * FROM "lazy_falses" ORDER BY lazy_falses.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Create (2.1ms)[0m   [0;1mINSERT INTO "false_values" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;35;1mHasManyBooleansTest::FalseValue Load (1.3ms)[0m   [0mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Update (3.0ms)[0m   [0;1mUPDATE "false_values" SET "booleans" = 2 WHERE "id" = 1[0m
+  [4;35;1mHasManyBooleansTest::FalseValue Load (1.1ms)[0m   [0mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Load (0.9ms)[0m   [0;1mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::FalseValue Update (1.5ms)[0m   [0mUPDATE "false_values" SET "booleans" = 6 WHERE "id" = 1[0m
+  [4;36;1mHasManyBooleansTest::FalseValue Load (1.1ms)[0m   [0;1mSELECT * FROM "false_values" ORDER BY false_values.id DESC LIMIT 1[0m
+  [4;35;1mHasManyBooleansTest::Scope Create (2.4ms)[0m   [0mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 0)[0m
+  [4;36;1mHasManyBooleansTest::Scope Create (4.0ms)[0m   [0;1mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 5)[0m
+  [4;35;1mHasManyBooleansTest::Scope Create (4.6ms)[0m   [0mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 1)[0m
+  [4;36;1mHasManyBooleansTest::Scope Create (4.0ms)[0m   [0;1mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 4)[0m
+  [4;35;1mHasManyBooleansTest::Scope Create (4.0ms)[0m   [0mINSERT INTO "scopes" ("name", "booleans") VALUES(NULL, 2)[0m
+  [4;36;1mHasManyBooleansTest::Scope Load (1.3ms)[0m   [0;1mSELECT * FROM "scopes" WHERE ("scopes"."id" = 5) [0m
+  [4;35;1mHasManyBooleansTest::Scope Load (1.0ms)[0m   [0mSELECT * FROM "scopes" WHERE (booleans & 2) [0m
+  [4;36;1mHasManyBooleansTest::Scope Load (1.4ms)[0m   [0;1mSELECT * FROM "scopes" WHERE ("scopes"."id" IN (1,4,5)) [0m
+  [4;35;1mHasManyBooleansTest::Scope Load (0.8ms)[0m   [0mSELECT * FROM "scopes" WHERE (booleans & 1 < 1) [0m
+  [4;36;1mHasManyBooleansTest::Scope Load (0.9ms)[0m   [0;1mSELECT * FROM "scopes" WHERE ("scopes"."id" IN (2,4,5)) [0m
+  [4;35;1mHasManyBooleansTest::Scope Load (1.1ms)[0m   [0mSELECT * FROM "scopes" WHERE (booleans & 2 or booleans & 4) [0m
+  [4;36;1mHasManyBooleansTest::Scope Load (0.4ms)[0m   [0;1mSELECT * FROM "scopes" WHERE ((booleans & 4) AND (booleans & 2)) [0m
+  [4;35;1mHasManyBooleansTest::ValidateTest Create (8.3ms)[0m   [0mINSERT INTO "validate_tests" ("name", "booleans") VALUES(NULL, 2)[0m
+  [4;36;1mHasManyBooleansTest::ValidateTest Create (2.3ms)[0m   [0;1mINSERT INTO "validate_tests" ("name", "booleans") VALUES(NULL, 2)[0m

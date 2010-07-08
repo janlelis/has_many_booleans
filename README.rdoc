@@ -1,0 +1,74 @@
+== ActiveRecord plugin: has_many_booleans
+<em>has_many_booleans creates virtual boolean attributes for a model.
+When the object gets saved, the plugin transforms all attributes into a single integer, using a {bitset}[http://en.wikipedia.org/wiki/Bitset]. So you can easily add new attributes without changing the database structure.</em>
+
+
+=== Setup
+Install the plugin with
+* Rails 2:  <tt>script/plugin install {http://http://github.com/janlelis/has_many_booleans}[http://github.com/janlelis/has_many_booleans]</tt>
+* Rails 3:  <tt>rails p install {http://http://github.com/janlelis/has_many_booleans}[http://github.com/janlelis/has_many_booleans]</tt>
+* Or as a gem: <tt>gem install has_many_booleans</tt>
+
+Add an integer field with the name +booleans+ to your the model's database table.
+
+=== Example usage
+
+You simply list names for the desired booleans in the model.rb file...
+
+  class Model < ActiveRecord::Base
+    has_many_booleans :name, :password
+  end
+
+...to get the following methods:
+[<tt>name_activated</tt>, <tt>name_activated?</tt>]   get the value of the boolean
+[<tt>name_activated!</tt>]                         set the value to true
+[<tt>name_activated=</tt> value]                   set the value to false or true
+[<tt>password_activated</tt>, ...]                 same methods for <tt>:password</tt>
+
+
+When saving the object, all "virtual" booleans get converted to a single integer that is
+saved in the database. Vice versa, when loading an model from the database, its boolean integer sets the value of the above methods.
+
+==== Example 2: basic options
+
+  class Model < ActiveRecord::Base
+    has_many_booleans :name, :password,
+            :true => [:name],
+            :append => 'set',
+  end
+
+The default values of all booleans is +false+. However, with the <tt>:true</tt> option, you can list those booleans, which should default to +true+.
+
+The <tt>:append</tt> option lets you modify the suffix to append to the boolean names.
+
+==== Example 3: advanced options
+
+  class Model < ActiveRecord::Base
+    has_many_booleans :name, :password,
+            :field => 'some_db_field',
+            :lazy  => false,
+            :self  => 'model_available',
+            :self_value => true,
+  end
+
+The <tt>:field</tt> option lets you change the database field in which the integer gets stored (default is +booleans+).
+
+When the <tt>:lazy</tt> option is set to +false+, the bitset integer gets changed every time you assign a new value for a boolean. The default setting is +true+, which means, the integer does not get updated until the object is saved in the database.
+
+The <tt>:self</tt> option is just another virtual boolean, which's method name you can freely assign.
+
+=== Scopes
+The plugin also generates a <tt>.true</tt> and a <tt>.false</tt> scope for the model. You have to pass a boolean name as parameter to filter for this value. If you pass multiple boolean names, they get connected with 'or'. To get an 'and' condition, chain multiple scopes. If you don't pass any boolean names (or +nil+), the special <tt>:self</tt> boolean is meant.
+
+==== Example queries
+  Model.true(:name)   # scopes to all models, where :name is true
+  Model.false         # scopes to all models, where the :self boolean is false
+  Model.true(:name, :password)      # :name or :password must be true
+  Model.true(:name).true(:password) # :name and :password must be true
+
+=== Further reading
+For a more detailed description of the options, see the rdoc for the {has_many_booleans}[link:classes/HasManyBooleans/ClassMethods.html#M000003] method.
+
+Copyright (c) 2010 Jan Lelis, http://rbjl.net, released under the MIT license
+ available at http://github.com/janlelis/has_many_booleans
+

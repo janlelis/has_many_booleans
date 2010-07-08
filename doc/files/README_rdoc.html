@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Jul 08 10:20:14 +0200 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h2>ActiveRecord plugin: has_many_booleans</h2>
+<p>
+<em>has_many_booleans creates virtual boolean attributes for a model. When
+the object gets saved, the plugin transforms all attributes into a single
+integer, using a <a href="http://en.wikipedia.org/wiki/Bitset">bitset</a>.
+So you can easily add new attributes without changing the database
+structure.</em>
+</p>
+<h3>Setup</h3>
+<p>
+Install the plugin with
+</p>
+<ul>
+<li>Rails 2: <tt>script/plugin install <a
+href="http://github.com/janlelis/has_many_booleans">http://github.com/janlelis/has_many_booleans</a></tt>
+
+</li>
+<li>Rails 3: <tt>rails p install <a
+href="http://github.com/janlelis/has_many_booleans">http://github.com/janlelis/has_many_booleans</a></tt>
+
+</li>
+<li>Or as a gem: <tt>gem install has_many_booleans</tt>
+
+</li>
+</ul>
+<p>
+Add an integer field with the name <tt>booleans</tt> to your the
+model&#8216;s database table.
+</p>
+<h3>Example usage</h3>
+<p>
+You simply list names for the desired booleans in the model.rb file&#8230;
+</p>
+<pre>
+  class Model &lt; ActiveRecord::Base
+    has_many_booleans :name, :password
+  end
+</pre>
+<p>
+&#8230;to get the following methods:
+</p>
+<dl>
+<dt><tt>name_activated</tt>, <tt>name_activated?</tt></dt><dd>get the value of the boolean
+
+</dd>
+<dt><tt>name_activated!</tt></dt><dd>set the value to true
+
+</dd>
+<dt><tt>name_activated=</tt> value</dt><dd>set the value to false or true
+
+</dd>
+<dt><tt>password_activated</tt>, &#8230;</dt><dd>same methods for <tt>:password</tt>
+
+</dd>
+</dl>
+<p>
+When saving the object, all &quot;virtual&quot; booleans get converted to a
+single integer that is saved in the database. Vice versa, when loading an
+model from the database, its boolean integer sets the value of the above
+methods.
+</p>
+<h4>Example 2: basic options</h4>
+<pre>
+  class Model &lt; ActiveRecord::Base
+    has_many_booleans :name, :password,
+            :true =&gt; [:name],
+            :append =&gt; 'set',
+  end
+</pre>
+<p>
+The default values of all booleans is <tt>false</tt>. However, with the
+<tt>:true</tt> option, you can list those booleans, which should default to
+<tt>true</tt>.
+</p>
+<p>
+The <tt>:append</tt> option lets you modify the suffix to append to the
+boolean names.
+</p>
+<h4>Example 3: advanced options</h4>
+<pre>
+  class Model &lt; ActiveRecord::Base
+    has_many_booleans :name, :password,
+            :field =&gt; 'some_db_field',
+            :lazy  =&gt; false,
+            :self  =&gt; 'model_available',
+            :self_value =&gt; true,
+  end
+</pre>
+<p>
+The <tt>:field</tt> option lets you change the database field in which the
+integer gets stored (default is <tt>booleans</tt>).
+</p>
+<p>
+When the <tt>:lazy</tt> option is set to <tt>false</tt>, the bitset integer
+gets changed every time you assign a new value for a boolean. The default
+setting is <tt>true</tt>, which means, the integer does not get updated
+until the object is saved in the database.
+</p>
+<p>
+The <tt>:self</tt> option is just another virtual boolean, which&#8216;s
+method name you can freely assign.
+</p>
+<h3>Scopes</h3>
+<p>
+The plugin also generates a <tt>.true</tt> and a <tt>.false</tt> scope for
+the model. You have to pass a boolean name as parameter to filter for this
+value. If you pass multiple boolean names, they get connected with
+&#8216;or&#8217;. To get an &#8216;and&#8217; condition, chain multiple
+scopes. If you don&#8216;t pass any boolean names (or <tt>nil</tt>), the
+special <tt>:self</tt> boolean is meant.
+</p>
+<h4>Example queries</h4>
+<pre>
+  Model.true(:name)   # scopes to all models, where :name is true
+  Model.false         # scopes to all models, where the :self boolean is false
+  Model.true(:name, :password)      # :name or :password must be true
+  Model.true(:name).true(:password) # :name and :password must be true
+</pre>
+<h3>Further reading</h3>
+<p>
+For a more detailed description of the options, see the rdoc for the <a
+href="../classes/HasManyBooleans/ClassMethods.html#M000003">has_many_booleans</a>
+method.
+</p>
+<p>
+Copyright (c) 2010 Jan Lelis, <a href="http://rbjl.net">rbjl.net</a>,
+released under the MIT license
+</p>
+<pre>
+ available at http://github.com/janlelis/has_many_booleans
+</pre>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

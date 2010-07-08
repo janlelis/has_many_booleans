@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: HasManyBooleans::ClassMethods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">HasManyBooleans::ClassMethods</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/has_many_booleans_rb.html">
+                lib/has_many_booleans.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000003">has_many_booleans</a>&nbsp;&nbsp;
+      <a href="#M000004">hmb</a>&nbsp;&nbsp;
+      <a href="#M000005">validates_false</a>&nbsp;&nbsp;
+      <a href="#M000006">validates_true</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000003" class="method-detail">
+        <a name="M000003"></a>
+
+        <div class="method-heading">
+          <a href="#M000003" class="method-signature">
+          <span class="method-name">has_many_booleans</span><span class="method-args">(*params)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h3>Setup the booleans for a model</h3>
+<p>
+The method takes the symbols of the desired booleans as parameters. As last
+parameter you can apply an options hash. Each symbol represents an index,
+<em>depending on the position</em> in the list, starting with 1.
+</p>
+<pre>
+   class Model &lt; ActiveRecord::Base
+     has_many_booleans :name, :password,
+       :true =&gt; [      :name ],
+       :append =&gt; 'set',
+   end
+</pre>
+<p>
+Another way of setting up the booleans is with an hash. This is useful when
+you want to choose the indexes yourself.
+</p>
+<pre>
+   class Model &lt; ActiveRecord::Base
+     has_many_booleans({:name =&gt; 23, :password =&gt; 99},
+       :append =&gt; 'set')
+   end
+</pre>
+<h4>Available options</h4>
+<dl>
+<dt><tt>:true</tt></dt><dd>Takes an array of boolean names which shall default to <tt>true</tt>.
+
+</dd>
+<dt><tt>:append</tt></dt><dd>The name to append to the listed booleans. The underscore is added
+automatically. <tt>nil</tt> is also possible. Default is
+<tt>activated</tt>.
+
+</dd>
+<dt><tt>:field</tt></dt><dd>The database field used. Defaults to <tt>booleans</tt>.
+
+</dd>
+<dt><tt>:suffixes</tt></dt><dd>Specifies, which &quot;alias&quot; methods are created. Defaults to
+<tt>[&quot;?&quot;, &quot;=&quot;, &quot;!&quot;]</tt>. You cannot add new
+ones, you can only forbid some of them.
+
+</dd>
+<dt><tt>:false_values</tt></dt><dd>All the values in the array can be used to set a boolean to <tt>false</tt>
+(when used with the <tt>=</tt> method). <b>Example:</b> Set this to
+<tt>[&quot;0&quot;]</tt> and then call <tt>some_boolean_activated =
+&quot;0&quot;</tt>, it will set the boolean to <tt>false</tt>. Default
+settings is <tt>false</tt> (deactivated).
+
+</dd>
+<dt><tt>:lazy</tt></dt><dd>When the <tt>:lazy</tt> option is set to <tt>false</tt>, the bitset integer
+gets changed every time you assign a new value for a boolean. The default
+setting is <tt>true</tt>, which means, the integer gets only updated when
+the object is saved.
+
+</dd>
+<dt><tt>:self</tt></dt><dd>This is just another virtual boolean. You can freely assign the name. It is
+always stored as first bit in the bitset integer (so if the bitset integer
+is odd, this special boolean is set). You can also set this to
+<tt>true</tt>, which means, the <tt>:append</tt> value is used as method
+name. Default: <tt>false</tt>.
+
+</dd>
+<dt><tt>:self_value</tt></dt><dd>The default value for the special <tt>:self</tt> boolean above.
+
+</dd>
+</dl>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000003-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/has_many_booleans.rb, line 42</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">has_many_booleans</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">params</span>)
+
+      <span class="ruby-comment cmt"># get params</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span> <span class="ruby-comment cmt"># booleans_options</span>
+        <span class="ruby-identifier">parse_booleans_options</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">pop</span>
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-identifier">warn</span> <span class="ruby-value str">&quot;has_many_booleans: You applied a single hash as parameter, which gets interpreted as option hash. If you wish to use it as boolean hash, give a {} as second parameter!&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">parse_booleans_options</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span> <span class="ruby-comment cmt"># alternative usage with a hash instead of array</span>
+        <span class="ruby-identifier">params</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">first</span>
+        <span class="ruby-identifier">iter_method</span> = <span class="ruby-identifier">:each</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">iter_method</span> = <span class="ruby-identifier">:each_with_index</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-comment cmt"># data structure: { string =&gt; [index, boolean_value] }</span>
+      <span class="ruby-ivar">@booleans_default</span> = {}
+      <span class="ruby-identifier">params</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">iter_method</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">index</span> = <span class="ruby-identifier">index</span>.<span class="ruby-identifier">to_i</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>
+        <span class="ruby-ivar">@booleans_default</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>] = [ <span class="ruby-identifier">index</span>,
+          <span class="ruby-ivar">@booleans_options</span>[<span class="ruby-identifier">:true</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_sym</span>) <span class="ruby-operator">||</span>
+          <span class="ruby-ivar">@booleans_options</span>[<span class="ruby-identifier">:true</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>)
+        ] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      }
+
+      <span class="ruby-comment cmt"># validators</span>
+      <span class="ruby-ivar">@booleans_validators</span> = { <span class="ruby-keyword kw">true</span> =<span class="ruby-operator">&gt;</span> [], <span class="ruby-keyword kw">false</span> =<span class="ruby-operator">&gt;</span> [] }
+
+      <span class="ruby-identifier">send</span> <span class="ruby-identifier">:include</span>, <span class="ruby-constant">InstanceMethods</span>
+
+      <span class="ruby-comment cmt"># hook in callbacks part 1 (to not overwrite after_initialize)</span>
+      <span class="ruby-keyword kw">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword kw">self</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">instantiate_with_booleans</span>(<span class="ruby-identifier">record</span>) <span class="ruby-comment cmt">#:nodoc:</span>
+            <span class="ruby-identifier">object</span> = <span class="ruby-identifier">instantiate_without_booleans</span> <span class="ruby-identifier">record</span>
+            <span class="ruby-identifier">object</span>.<span class="ruby-identifier">initialize_booleans</span>
+            <span class="ruby-identifier">object</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">alias_method_chain</span> <span class="ruby-identifier">:instantiate</span>, <span class="ruby-identifier">:booleans</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">before_save</span> <span class="ruby-identifier">:save_booleans</span>
+
+      <span class="ruby-comment cmt"># register scopes</span>
+      <span class="ruby-identifier">booleans_scope</span> = <span class="ruby-identifier">lambda</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">true_or_false</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">indexes</span> = <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">blank?</span>
+           [<span class="ruby-value">1</span>] <span class="ruby-comment cmt"># special self boolean</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">args</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-comment cmt"># allow self in &quot;or&quot; connection</span>
+              <span class="ruby-value">1</span>
+            <span class="ruby-keyword kw">else</span>
+              <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+              <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@booleans_default</span>[<span class="ruby-identifier">name</span>]
+                <span class="ruby-identifier">warn</span> <span class="ruby-value str">'has_many_booleans: You are using unknown boolean names in your scope!'</span>
+              <span class="ruby-keyword kw">else</span>
+                <span class="ruby-value">2</span> <span class="ruby-operator">**</span> <span class="ruby-ivar">@booleans_default</span>[<span class="ruby-identifier">name</span>][<span class="ruby-value">0</span>]
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+          }.<span class="ruby-identifier">compact</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">cond</span> = [<span class="ruby-node">&quot;#{@booleans_options[:field]} &amp; ?#{' &lt; 1' if !true_or_false}&quot;</span>]<span class="ruby-operator">*</span><span class="ruby-identifier">indexes</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">*</span><span class="ruby-value str">' or '</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-constant">RAILS2</span>
+          {<span class="ruby-identifier">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">cond</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">indexes</span>]}
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">where</span> <span class="ruby-identifier">cond</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">indexes</span>
+        <span class="ruby-keyword kw">end</span>
+       }
+
+      <span class="ruby-identifier">scope_name</span> = <span class="ruby-constant">RAILS2</span> <span class="ruby-value">? </span><span class="ruby-operator">:</span><span class="ruby-identifier">named_scope</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">:scope</span>
+
+      <span class="ruby-identifier">send</span> <span class="ruby-identifier">scope_name</span>, <span class="ruby-identifier">:true</span>, <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">booleans_scope</span>[<span class="ruby-keyword kw">true</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>]
+      }
+
+      <span class="ruby-identifier">send</span> <span class="ruby-identifier">scope_name</span>, <span class="ruby-identifier">:false</span>, <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">booleans_scope</span>[<span class="ruby-keyword kw">false</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>]
+      }
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <span class="method-name">hmb</span><span class="method-args">(*params)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="ClassMethods.html#M000003">has_many_booleans</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="#M000005" class="method-signature">
+          <span class="method-name">validates_false</span><span class="method-args">(*bools)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+List all booleans that are required to be false!
+</p>
+<pre>
+  validates_false :description, :password
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000005-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/has_many_booleans.rb, line 143</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates_false</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">bools</span>)
+      <span class="ruby-identifier">booleans_validators</span>[<span class="ruby-keyword kw">false</span>] = <span class="ruby-identifier">bools</span>
+      <span class="ruby-identifier">validate</span> <span class="ruby-identifier">:validator_false</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="#M000006" class="method-signature">
+          <span class="method-name">validates_true</span><span class="method-args">(*bools)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+List all booleans that are required to be true!
+</p>
+<pre>
+  validates_false :description, :password
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000006-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/has_many_booleans.rb, line 150</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">validates_true</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">bools</span>)
+      <span class="ruby-identifier">booleans_validators</span>[<span class="ruby-keyword kw">true</span>] = <span class="ruby-identifier">bools</span>
+      <span class="ruby-identifier">validate</span> <span class="ruby-identifier">:validator_true</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
