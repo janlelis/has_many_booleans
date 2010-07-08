@@ -70,5 +70,6 @@ The plugin also generates a <tt>.true</tt> and a <tt>.false</tt> scope for the m
 For a more detailed description of the options, see the rdoc for the has_many_booleans method.
 
 Code available at http://github.com/janlelis/has_many_booleans
+
 Copyright (c) 2010 Jan Lelis, http://rbjl.net, released under the MIT license
 

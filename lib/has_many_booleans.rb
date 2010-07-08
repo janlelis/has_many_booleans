@@ -331,5 +331,6 @@ end
 ActiveRecord::Base.send :include, HasManyBooleans
 
 #Code available at http://github.com/janlelis/has_many_booleans
+#
 #Copyright (c) 2010 Jan Lelis, http://rbjl.net, released under the MIT license
 
