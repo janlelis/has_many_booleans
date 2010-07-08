@@ -330,6 +330,6 @@ end
 # activate instance methods
 ActiveRecord::Base.send :include, HasManyBooleans
 
-# Copyright (c) 2010 Jan Lelis http://rbjl.net, released under the MIT license
-#  available at http://github.com/janlelis/has_many_booleans
+#Code available at http://github.com/janlelis/has_many_booleans
+#Copyright (c) 2010 Jan Lelis, http://rbjl.net, released under the MIT license
 

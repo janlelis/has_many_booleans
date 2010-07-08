@@ -56,7 +56,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Thu Jul 08 10:20:14 +0200 2010</td>
+      <td>Thu Jul 08 18:53:15 +0200 2010</td>
     </tr>
     </table>
   </div>
@@ -73,7 +73,8 @@
 <p>
 <em>has_many_booleans creates virtual boolean attributes for a model. When
 the object gets saved, the plugin transforms all attributes into a single
-integer, using a <a href="http://en.wikipedia.org/wiki/Bitset">bitset</a>.
+integer, using a <a
+href="http://rbjl.net/2-storing-an-array-of-indices-in-an-integer">bitset</a>.
 So you can easily add new attributes without changing the database
 structure.</em>
 </p>
@@ -82,15 +83,16 @@ structure.</em>
 Install the plugin with
 </p>
 <ul>
-<li>Rails 2: <tt>script/plugin install <a
-href="http://github.com/janlelis/has_many_booleans">http://github.com/janlelis/has_many_booleans</a></tt>
+<li>Rails 2: <tt>script/plugin install
+git://github.com/janlelis/has_many_booleans</tt>
 
 </li>
-<li>Rails 3: <tt>rails p install <a
-href="http://github.com/janlelis/has_many_booleans">http://github.com/janlelis/has_many_booleans</a></tt>
+<li>Rails 3: <tt>rails plugin install
+git://github.com/janlelis/has_many_booleans</tt>
 
 </li>
-<li>Or as a gem: <tt>gem install has_many_booleans</tt>
+<li>Or as a gem: <tt>gem install has_many_booleans</tt> (and add it to your
+environment.rb/Gemfile)
 
 </li>
 </ul>
@@ -189,17 +191,15 @@ special <tt>:self</tt> boolean is meant.
 </pre>
 <h3>Further reading</h3>
 <p>
-For a more detailed description of the options, see the rdoc for the <a
-href="../classes/HasManyBooleans/ClassMethods.html#M000003">has_many_booleans</a>
-method.
+For a more detailed description of the options, see the rdoc for the
+has_many_booleans method.
 </p>
 <p>
+Code available at <a
+href="http://github.com/janlelis/has_many_booleans">github.com/janlelis/has_many_booleans</a>
 Copyright (c) 2010 Jan Lelis, <a href="http://rbjl.net">rbjl.net</a>,
 released under the MIT license
 </p>
-<pre>
- available at http://github.com/janlelis/has_many_booleans
-</pre>
 
     </div>
 
