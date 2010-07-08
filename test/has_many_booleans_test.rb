@@ -134,7 +134,6 @@ class HasManyBooleansTest < ActiveSupport::TestCase
       :lazy_false                    => LazyFalse.new,
       :false_value                   => FalseValue.new,
     }
-    @booleans_options = Hash[ @instances.map{|k,v| [k, v.class.booleans_options]} ]
   end
 
   def create_instance(which, *params)
@@ -143,12 +142,9 @@ class HasManyBooleansTest < ActiveSupport::TestCase
   end
 
   def loop_instances(with_assign = false)
-    cur_actions = @instances.each
-    cur_booleans_options = @booleans_options.each
-
-    loop{
-      @n, @a = cur_actions.next    # name, instances
-      @o     = cur_booleans_options.next[1] # booleans_options
+    @instances.each{ |name, instance|
+      @n, @a = name, instance
+      @o     = @a.class.booleans_options
       next if with_assign &&( !@o[:suffixes].include?('=') || !@o[:append] ||  @o[:append].empty?) # or name does not work (existing method overwrite protection)
       yield
     }
@@ -232,14 +228,14 @@ class HasManyBooleansTest < ActiveSupport::TestCase
         assert              @a.save
         tmp = @a.class
 
-        assert_instance_of  @a = @a.class.last, tmp
+        assert_instance_of  tmp, (@a = @a.class.last)
         assert_not          snd what
 
         snd what, '=', true
         assert              @a.save
         tmp = @a.class
 
-        assert_instance_of  @a = @a.class.last, tmp
+        assert_instance_of  tmp, (@a = @a.class.last)
         assert              snd what
       }
     end
