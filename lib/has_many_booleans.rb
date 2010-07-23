@@ -35,7 +35,9 @@ else
     #[<tt>:append</tt>] The name to append to the listed booleans. The underscore is added automatically. +nil+ is also possible. Default is +activated+.
     #[<tt>:field</tt>] The database field used. Defaults to +booleans+.
     #[<tt>:suffixes</tt>] Specifies, which "alias" methods are created. Defaults to <tt>["?", "=", "!"]</tt>. You cannot add new ones, you can only forbid some of them.
-    #[<tt>:false_values</tt>] All the values in the array can be used to set a boolean to +false+ (when used with the <tt>=</tt> method). <b>Example:</b> Set this to <tt>["0"]</tt> and then call <tt>some_boolean_activated = "0"</tt>, it will set the boolean to +false+. Default settings is +false+ (deactivated).
+    #[<tt>:false_values</tt>] All the values in the array can be used to set a boolean to +false+ (when used with the <tt>=</tt> method). <b>Example:</b> Set this to <tt>["0"]</tt> and then call <tt>some_boolean_activated = "0"</tt>, it will set the boolean to +false+. By default, this is set to ActiveRecord::ConnectionAdapters::Column::FALSE_VALUES.
+    #[<tt>:true_values</tt>] Which values should be true (if <tt>:unkown_value</tt> is set to +false+) Default is ActiveRecord::ConnectionAdapters::Column::TRUE_VALUES.
+    #[<tt>:unkown_value</tt>] What should be the value of a boolean, if it is not found in the <tt>:false_</tt> or <tt>:true_values</tt>? Default is +true+, set this to +false+ to get ActiveRecord behaviour.
     #[<tt>:lazy</tt>]  When the <tt>:lazy</tt> option is set to +false+, the bitset integer gets changed every time you assign a new value for a boolean. The default setting is +true+, which means, the integer gets only updated when the object is saved.
     #[<tt>:self</tt>] This is just another virtual boolean. You can freely assign the name. It is always stored as first bit in the bitset integer (so if the bitset integer is odd, this special boolean is set). You can also set this to +true+, which means, the <tt>:append</tt> value is used as method name. Default: +false+.
     #[<tt>:self_value</tt>] The default value for the special <tt>:self</tt> boolean above.
@@ -161,7 +163,9 @@ else
         :field    => 'booleans',
         :suffixes => %w| ! = ? |,
         :true     => [],
-        :false_values => [], # e.g. [0, "0", ""],
+        :false_values => ActiveRecord::ConnectionAdapters::Column::FALSE_VALUES,
+        :true_values  => ActiveRecord::ConnectionAdapters::Column::TRUE_VALUES,
+        :unknown_value => true,
         :self     => false,
         :self_value => false,
         :lazy     => true,
@@ -269,12 +273,22 @@ else
             @booleans_data[name][1] = true
             save_booleans  if !self.class.booleans_options[:lazy]
           when '='
-            @booleans_data[name][1] =
-            !!( new_value[0] && !self.class.booleans_options[:false_values].member?(new_value[0]) )
+            @booleans_data[name][1] = set_value new_value[0]
             save_booleans  if !self.class.booleans_options[:lazy]
           end
           @booleans_data[name][1]
         end
+      end
+    end
+
+    def set_value(v)
+      case
+      when !v        || self.class.booleans_options[:false_values].member?(v)
+        false
+      when v == true || self.class.booleans_options[:true_values].member?(v)
+        true
+      else
+        self.class.booleans_options[:unknown_value]
       end
     end
 

@@ -49,6 +49,7 @@ The <tt>:append</tt> option lets you modify the suffix to append to the boolean 
             :lazy  => false,
             :self  => 'model_available',
             :self_value => true,
+            :unkown_value => false,
   end
 
 The <tt>:field</tt> option lets you change the database field in which the integer gets stored (default is +booleans+).
@@ -56,6 +57,10 @@ The <tt>:field</tt> option lets you change the database field in which the integ
 When the <tt>:lazy</tt> option is set to +false+, the bitset integer gets changed every time you assign a new value for a boolean. The default setting is +true+, which means, the integer does not get updated until the object is saved in the database.
 
 The <tt>:self</tt> option is just another virtual boolean, which's method name you can freely assign.
+
+The <tt>:unknown_value</tt> is the new value for booleans, which are assigned a new value, but it is not in the <tt>:false_values</tt> or <tt>:true_values</tt> option arrays. Default is +true+, set it to +false+ to get ActiveRecord behaviour.
+
+The default <tt>false_</tt> and <tt>true_values</tt> are the same as in ActiveRecord.
 
 === Scopes
 The plugin also generates a <tt>.true</tt> and a <tt>.false</tt> scope for the model. You have to pass a boolean name as parameter to filter for this value. If you pass multiple boolean names, they get connected with 'or'. To get an 'and' condition, chain multiple scopes. If you don't pass any boolean names (or +nil+), the special <tt>:self</tt> boolean is meant.

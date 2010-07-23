@@ -107,6 +107,10 @@ class HasManyBooleansTest < ActiveSupport::TestCase
     has_many_booleans :name, :password, :admin, :false_values => ["super", 'toll', 3]
   end
 
+  class UnknownValue < ActiveRecord::Base
+    has_many_booleans :name, :password, :admin, :unkown_value => false
+  end
+
   class Scope < ActiveRecord::Base
     has_many_booleans :name, :password, :admin, :self => true
   end
@@ -133,6 +137,7 @@ class HasManyBooleansTest < ActiveSupport::TestCase
       :ar_callback                   => ArCallback.new,
       :lazy_false                    => LazyFalse.new,
       :false_value                   => FalseValue.new,
+      :unknown_value                 => UnknownValue.new,
     }
   end
 
@@ -210,7 +215,7 @@ class HasManyBooleansTest < ActiveSupport::TestCase
   test 'set and unset (with =)' do
     create_instances and loop_instances(true) do
                   ( snd :name, '=', false )#, "#{@a.class},#{p :O;snd :name, '=', false}"
-      assert_not    snd :name
+      assert_not    (snd :name), "#{@a}, #{snd :name}"
                     snd :name, '=', true
       assert        snd :name
 
@@ -340,6 +345,16 @@ class HasManyBooleansTest < ActiveSupport::TestCase
                 snd :name, '=', 99
     assert      snd :name
   end
+
+#  test "unknown value" do
+#    create_instance UnknownValue
+
+#                snd :name, '=', true
+#                snd :name, '=', 'not in true values'
+#    assert_not  snd :name
+#                snd :name, '=', 'true'
+#    assert      snd :name
+#  end
 
   # scopes
   test 'scopes' do

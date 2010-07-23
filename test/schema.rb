@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 0) do
    single_hashes
    validate_tests
    false_values
+   unknown_values
    scopes
   |.each do |table_name|
     create_table table_name, :force => true do |t|
