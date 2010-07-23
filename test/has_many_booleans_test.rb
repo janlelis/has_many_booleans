@@ -269,6 +269,14 @@ class HasManyBooleansTest < ActiveSupport::TestCase
     assert_equal @a.name, 'matz'
   end
 
+  test 'Model.new works' do
+    @a = ArCallback.new :name_activated => true, :name => 'Hildegard', :password => '123'
+
+    assert @a.name_activated
+    assert_equal @a.name,     'Yukihiro'
+    assert_equal @a.password, '123'
+  end
+
   # # #
   # booleans_options
   #

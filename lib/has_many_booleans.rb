@@ -300,11 +300,36 @@ module HasManyBooleans #:nodoc:
 
 
 
+
     # hook in callbacks part 2 (to not overwrite after_initialize)
-    #TODO run callback after booleans have been fetched
-    def initialize(*args, &block) # :nodoc:
-      super *args, &block
+    # TODO someday: run callback after booleans have been fetched
+    def initialize(attributes = nil) # :nodoc:
+
+      if init_callback_defined = respond_to?(:after_initialize)
+        instance_eval do
+          alias tmp_after_initialize after_initialize
+          undef after_initialize
+        end
+      end
+
+      super()
       initialize_booleans
+      self.attributes = attributes unless attributes.nil?
+      result = yield self if block_given?
+
+      if init_callback_defined
+        instance_eval do
+          alias after_initialize tmp_after_initialize
+          undef tmp_after_initialize
+          if RAILS2
+            callback(:after_initialize)
+          else
+            _run_initialize_callbacks
+          end
+        end
+      end
+
+      result
     end
 
     if respond_to? :initialize_copy

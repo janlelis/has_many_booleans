@@ -13,7 +13,6 @@ ActiveRecord::Schema.define(:version => 0) do
    selves
    self_append_nils
    self_names
-   ar_callbacks
    lazy_falses
    booleans_as_hashes
    single_hashes
@@ -32,6 +31,13 @@ ActiveRecord::Schema.define(:version => 0) do
     t.string :name
     t.integer :bools
   end
+
+  create_table 'ar_callbacks', :force => true do |t|
+      t.string :name
+      t.string :password
+      t.integer :booleans
+    end
+
 
 end
 
