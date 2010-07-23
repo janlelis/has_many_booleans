@@ -27,7 +27,7 @@ end
 PKG_FILES = FileList[ '[a-zA-Z]*', 'lib/**/*', 'rails/**/*', 'test/**/*' ]
 spec = Gem::Specification.new do |s|
   s.name = "has_many_booleans"
-  s.version = "0.9.1"
+  s.version = "0.9.2"
   s.author = "Jan Lelis"
   s.email = "mail@janlelis.de"
   s.homepage = "http://github.com/janlelis/has_many_booleans"

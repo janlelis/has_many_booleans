@@ -5,8 +5,8 @@ require 'has_many_booleans/simple_bitset'
 module HasManyBooleans #:nodoc:
   RAILS2  = if ENV['RAILS_GEM_VERSION']
     ENV['RAILS_GEM_VERSION'] < '3'
-else
-    true
+  else
+    Rails::VERSION::STRING < '3'
   end
 
   module ClassMethods
