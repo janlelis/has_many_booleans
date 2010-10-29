@@ -106,7 +106,7 @@ module HasManyBooleans #:nodoc:
             end
           }.compact
         end
-        cond = ["#{@booleans_options[:field]} & ?#{' < 1' if !true_or_false}"]*indexes.size*' or '
+        cond = ["#{@booleans_options[:field]} & ?#{true_or_false ? ' > 0' : ' < 1'}"]*indexes.size*' or '
         if RAILS2
           {:conditions => [cond, *indexes]}
         else
