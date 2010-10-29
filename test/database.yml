@@ -3,4 +3,4 @@ sqlite:
   :database: vendor/plugins/has_many_booleans/test/has_many_booleans_plugin.sqlite
 sqlite3:
   :adapter: sqlite3
-  :database: test/has_many_booleans_plugin.sqlite3
+  :database: ":memory:"
