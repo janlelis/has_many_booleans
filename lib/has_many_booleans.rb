@@ -1,4 +1,5 @@
 require 'has_many_booleans/simple_bitset'
+require 'has_many_booleans/version'
 
 module HasManyBooleans #:nodoc:
   module ClassMethods

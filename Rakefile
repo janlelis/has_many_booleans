@@ -2,6 +2,7 @@ require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
 require 'rake/gempackagetask'
+require File.dirname(__FILE__) + "/lib/has_many_booleans/version"
 
 
 desc 'Default: run unit tests.'
@@ -28,7 +29,7 @@ end
 PKG_FILES = FileList[ '[a-zA-Z]*', 'lib/**/*', 'rails/**/*', 'test/**/*' ]
 spec = Gem::Specification.new do |s|
   s.name = "has_many_booleans"
-  s.version = "0.9.3"
+  s.version = HasManyBooleans::VERSION
   s.author = "Jan Lelis"
   s.email = "mail@janlelis.de"
   s.homepage = "http://github.com/janlelis/has_many_booleans"
