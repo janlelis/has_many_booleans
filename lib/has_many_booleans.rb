@@ -1,14 +1,6 @@
-#  J-_-L
-
 require 'has_many_booleans/simple_bitset'
 
 module HasManyBooleans #:nodoc:
-  RAILS2  = if ENV['RAILS_GEM_VERSION']
-    ENV['RAILS_GEM_VERSION'] < '3'
-  else
-    Rails::VERSION::STRING < '3'
-  end
-
   module ClassMethods
     #=== Setup the booleans for a model
     #The method takes the symbols of the desired booleans as parameters. As last
@@ -107,20 +99,14 @@ module HasManyBooleans #:nodoc:
           }.compact
         end
         cond = ["#{@booleans_options[:field]} & ?#{true_or_false ? ' > 0' : ' < 1'}"]*indexes.size*' or '
-        if RAILS2
-          {:conditions => [cond, *indexes]}
-        else
-          where cond, *indexes
-        end
+        where cond, *indexes
        }
 
-      scope_name = RAILS2 ? :named_scope : :scope
-
-      send scope_name, :true, lambda { |*args|
+      scope :true, lambda { |*args|
         booleans_scope[true, *args]
       }
 
-      send scope_name, :false, lambda { |*args|
+      scope :false, lambda { |*args|
         booleans_scope[false, *args]
       }
     end
@@ -197,7 +183,6 @@ module HasManyBooleans #:nodoc:
   end
 
   module InstanceMethods #:nodoc: callbacks
-
     # Load boolean integer from database and define the methods.
     def initialize_booleans
       booleans_field  = self.class.booleans_options[:field]
@@ -256,14 +241,14 @@ module HasManyBooleans #:nodoc:
       @booleans_data.each{ |_, (index, value)|
         act << index if value
       }
-      self[self.class.booleans_options[:field]] = act.to_bri
+      self[ self.class.booleans_options[:field] ] = act.to_bri
     end
 
     private
 
     def define_boolean_method(method_name, suffix, name=nil)
       if self.respond_to?(method_name)
-        #warn "has_many_booleans: Could not define #{method_name} for #{self.class} (method already exists)"
+        # warn "has_many_booleans: Could not define #{method_name} for #{self.class} (method already exists)"
       else
         self.class.send(:define_method, method_name) do |*new_value|
           case suffix
@@ -299,47 +284,20 @@ module HasManyBooleans #:nodoc:
     end
 
 
-
-
-    # hook in callbacks part 2 (to not overwrite after_initialize)
+    # hook in callbacks part 2
     # TODO someday: run callback after booleans have been fetched
     def initialize(attributes = nil) # :nodoc:
-
-      if init_callback_defined = respond_to?(:after_initialize)
-        instance_eval do
-          alias tmp_after_initialize after_initialize
-          undef after_initialize
-        end
-      end
-
       super()
       initialize_booleans
       self.attributes = attributes unless attributes.nil?
-      result = yield self if block_given?
-
-      if init_callback_defined
-        instance_eval do
-          alias after_initialize tmp_after_initialize
-          undef tmp_after_initialize
-          if RAILS2
-            callback(:after_initialize)
-          else
-            _run_initialize_callbacks
-          end
-        end
-      end
-
-      result
+      yield self if block_given?
     end
 
-    if respond_to? :initialize_copy
-      def initialize_copy(record)
-        object = super record
-        initialize_booleans
-        object
-      end
+    def initialize_copy(record) # :nodoc:
+      object = super record
+      initialize_booleans
+      object
     end
-
 
     # validators
     def validator_true
@@ -369,7 +327,4 @@ end
 # activate instance methods
 ActiveRecord::Base.send :include, HasManyBooleans
 
-#Code available at http://github.com/janlelis/has_many_booleans
-#
-#Copyright (c) 2010 Jan Lelis, http://rbjl.net, released under the MIT license
-
+# J-_-L

@@ -89,12 +89,14 @@ class HasManyBooleansTest < ActiveSupport::TestCase
 
   class ArCallback < ActiveRecord::Base
     has_many_booleans :name, :password, :admin
+    after_initialize :cb_after_initialize
+    before_save :cb_before_save
 
-    def after_initialize
+    def cb_after_initialize
       self.name = "Yukihiro"
     end
 
-    def before_save
+    def cb_before_save
       self.name = 'matz'
     end
   end
@@ -273,7 +275,7 @@ class HasManyBooleansTest < ActiveSupport::TestCase
     @a = ArCallback.new :name_activated => true, :name => 'Hildegard', :password => '123'
 
     assert @a.name_activated
-    assert_equal @a.name,     'Yukihiro'
+    assert_equal @a.name,     'Hildegard'
     assert_equal @a.password, '123'
   end
 
