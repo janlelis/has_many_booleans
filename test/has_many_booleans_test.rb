@@ -1,8 +1,4 @@
-# has_many_booleans (c) 2010 Jan Lelis, released under the MIT license
-#   available at <http://github.com/janlelis/has_many_booleans>
-#   more info at <http://rbjl.net/22>
-
-require File.dirname(__FILE__) + '/test_helper.rb'
+require File.expand_path( File.dirname(__FILE__) + '/test_helper' )
 
 class HasManyBooleansTest < ActiveSupport::TestCase
   load_schema
@@ -398,9 +394,9 @@ class HasManyBooleansTest < ActiveSupport::TestCase
 
                 snd :password, '=', false
                 snd :name,     '=', false
-    assert_not  @a.save, @a.errors.full_messages
+    assert_not  @a.save, @a.errors.full_messages.inspect
                 snd :name, '=', true
-    assert      @a.save, @a.errors.full_messages
+    assert      @a.save, @a.errors.full_messages.inspect
   end
 
   test 'validates_false' do
@@ -408,10 +404,11 @@ class HasManyBooleansTest < ActiveSupport::TestCase
 
                 snd :name,     '=', true
                 snd :password, '=', true
-    assert_not  @a.save, @a.errors.full_messages
+    assert_not  @a.save, @a.errors.full_messages.inspect
                 snd :password, '=', false
-    assert      @a.save, @a.errors.full_messages
+    assert      @a.save, @a.errors.full_messages.inspect
   end
 
 end
 
+# J-_-L

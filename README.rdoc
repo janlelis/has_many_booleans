@@ -4,10 +4,13 @@ When the object gets saved, the plugin transforms all attributes into a single i
 
 
 === Setup
-Install the plugin with
-* Rails 2:  <tt>script/plugin install git://github.com/janlelis/has_many_booleans</tt>
-* Rails 3:  <tt>rails plugin install git://github.com/janlelis/has_many_booleans</tt>
-* Or as a gem: <tt>gem install has_many_booleans</tt> (and add it to your environment.rb/Gemfile)
+Install the plugin with:
+
+    rails plugin install git://github.com/janlelis/has_many_booleans
+
+or as a gem:
+
+    gem install has_many_booleans # and add it to your Gemfile
 
 Add an integer field with the name +booleans+ to your the model's database table.
 
@@ -74,7 +77,6 @@ The plugin also generates a <tt>.true</tt> and a <tt>.false</tt> scope for the m
 === Further reading
 For a more detailed description of the options, see the rdoc for the has_many_booleans method.
 
-Code available at http://github.com/janlelis/has_many_booleans
+Copyright (c) 2010-2011 Jan Lelis, http://rbjl.net, released under the MIT license
 
-Copyright (c) 2010 Jan Lelis, http://rbjl.net, released under the MIT license
-
+Contributions by jellehelsen
