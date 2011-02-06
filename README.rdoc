@@ -14,6 +14,10 @@ or as a gem:
 
 Add an integer field with the name +booleans+ to your the model's database table.
 
+==== Rails 2
+
+To use it with Rails 2 you have to install 0.9.3 or use <tt>script/plugin install git://github.com/janlelis/has_many_booleans -r rails2</tt>
+
 === Example usage
 
 You simply list names for the desired booleans in the model.rb file...
